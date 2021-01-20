@@ -6,6 +6,7 @@
         <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
+        <%# form_withのブロック変数からフォーム部品を追加しているため、「room」キーの中に「name」キーが入る仕組み %>
         <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
       </div>
     </div>
