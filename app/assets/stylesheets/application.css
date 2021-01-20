@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/* 「*」というセレクターは、すべての要素に適用させるという意味 */
+/* box-sizingプロパティは要素のbox-sizeの算出を指定する。値にborder-boxを指定すると、要素のbox-sizeにpaddingとborderが含まれる */
+ * {
+   box-sizing: border-box;
+ }
