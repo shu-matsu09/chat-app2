@@ -52,3 +52,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 運用・テスト・本番の全ての環境で使用するので、gem deviseは一番下に記述する
+# bundle install実行後、rails g devise:installを実行
+gem 'devise'
