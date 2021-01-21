@@ -24,8 +24,8 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    # パラメーターの中に、ログインしているuserのidと紐づいているメッセージの内容(content)を受け取れるように許可
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
+    # パラメーターの中に、ログインしているuserのidと紐づいているメッセージの内容(content,image)を受け取れるように許可
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
 end

@@ -12,5 +12,10 @@
     <div class="message-content">
       <%= message.content %>
     </div>
+    <%# image_tagメソッドでは複雑なRailsのディレクトリパスを指定しなくてもモデルから画像ファイルを呼び出して引数に指定するだけで画像を表示するimg要素を生成する %>
+    <%# 「image_tag モデル.画像ファイル」または「image_tag (app/assets/)画像のファイルのパス %>
+    <%# レコードにファイルが添付されているかどうかでtrue,falseを返すattached?メソッドを使用。画像が存在する場合のみimage_tagが読み込まれる %>
+    <%# variantメソッドはActive Storageを導入している場合に使用可能。モデル名.ファイル名.variant(resize: '幅x高さ')で指定されたサイズ以下に変換する %>
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
   </div>
 </div>
