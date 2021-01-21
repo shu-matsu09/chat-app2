@@ -58,3 +58,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem 'pry-rails'
+
+# ImageMagick(ソフトウェア)をbrewでインストールしてから、Railsで扱うためにGemのMiniMagickをダウンロードする
+# MiniMagickによってImageMagickの機能がRailsで使用できるようになる
+# ImageProcessingは画像サイズを調整する機能を提供するGem
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+# 同時にActive Storageをアプリ内で使用する準備をするため、「rails active_storage:install」を実行、その後マイグレーションを実行
