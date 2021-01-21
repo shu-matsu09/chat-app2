@@ -1,0 +1,5 @@
+# 日本時間の設定には以下の記述をする
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

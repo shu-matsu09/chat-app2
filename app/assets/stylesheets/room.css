@@ -122,3 +122,9 @@ select {
   height: 80px;
   width: 100%;
 }
+
+/* 空のメッセージ送信のエラー発生時に自動生成されるdiv要素のclass属性を非表示にする */
+/* contentsを指定すると、その要素のボックスだけが表示されなくなる。noneを指定すると子要素も同時に非表示にされてしまう */
+.field_with_errors {
+  display: contents;
+}
