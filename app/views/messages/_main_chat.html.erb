@@ -44,16 +44,29 @@
     </div>
   </div>
 </div>
-
-<div class="form">
+<%# form_withの引数に@room, @messageを渡しているのは、messagesのルーティングがroomsにネストされているため %>
+<%# @roomには「指定のチャットルームのレコード情報」、@messageには「Messageモデルの空のインスタンス(Message.new)」を予めセットする必要がある %>
+<%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
   <div class="form-input">
-    <input class="form-message" placeholder= "type a message">
+    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    <label class='form-image'>
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
+
+<%# 以下はメッセージ保存機能の実装前の仮のコード %>
+<%# <div class="form">
+  <div class="form-input">
+    <input class="form-message" placeholder= "type a message"> %>
     <%# label要素はフォームの中でフォームの項目名とフォームの入力要素(画像選択フォーム、プルダウン、チェックボックスなど)を関連づけるための要素 %>
     <%# label要素の役割の一つとして、label要素がクリックされたときに、子要素もクリックされたことにしてくれる。この仕組みで見えないはずのファイル選択ボタンをクリックしたかのように動作させられる %>
-    <label class="form-image">
+    <%# <label class="form-image">
       <span class="image-file">画像</span>
       <input type="file" class="hidden">
     </label>
   </div>
   <input class="form-submit" type="submit" value="送信">
-</div>
+</div> %>
